@@ -1,0 +1,101 @@
+/*Custom Styles for TDLK Bricks Child Theme*/
+/*These need adding to custom.css*/
+
+/* Custom Font Sizes */
+:root {
+    /* Font sizes */
+    --font-size-body-normal: clamp(1.2rem, 0.382vw + 1.078rem, 1.6rem);
+    --font-size-body-small: clamp(0.9rem, 0.287vw + 0.808rem, 1.2rem);
+    --font-size-body-large: clamp(1.6rem, 0.382vw + 1.478rem, 2rem);
+    --font-size-header-nav-normal: clamp(1.2rem, 0.382vw + 1.078rem, 1.6rem);
+}
+
+/* Custom Header Styles */
+.header__menu > nav > ul > li {
+    padding: var(--button_padding);
+    line-height: 1;
+    border-radius: var(--button_radius);
+    border: var(--button_border_width) solid transparent;
+}
+
+/* Styles hover for all except last menu item */
+.header__menu > nav > ul > li:not(:last-child):hover {
+    border: var(--button_border_width) solid var(--colour-heading-nav-item-border);
+    background-color: var(--colour-heading-nav-text-background-hover);
+    color: white;
+}
+
+/* Styles the last child to be a button */
+.header__menu > nav > ul > li:last-child {
+    border: var(--button_border_width) solid var(--colour-btn-tdlk-learn-border);
+    background-color: var(--colour-btn-tdlk-learn);
+    color: var(--colour-btn-tdlk-learn-txt);
+}
+
+/* Sets the hover state of the last child button to tdlk lrn */
+.header__menu > nav > ul > li:last-child:hover {
+    border: var(--button_border_width) solid var(--colour-btn-tdlk-learn-border-hover);
+    background-color: var(--colour-btn-tdlk-learn-hover);
+}
+
+/* Sets the text vertically aligned when the last li is styled as :last child */
+.header__menu > nav > ul {
+    align-items: center;
+}
+
+/* Custom Sizes and Gaps */
+:root {
+    /* This clamp function is copy and pasted from geary.co ie. not automatic */
+    --heading-logo_width: clamp(8rem, 1.912vw + 7.388rem, 10rem);
+    --heading-logo_padding: clamp(0.3rem, 0.669vw + 0.086rem, 1rem);
+
+    /* Button sizing */
+    --btn-min-width: 100px;
+    --btn_padding-horiz: .3rem;
+    --btn_padding-vert: .3rem;
+    --btn_padding: var(--btn_padding-horiz) var(--btn_padding-vert);
+    --btn_radius: .2em;
+
+    /* Border widths */
+    --button_border_width: 2px;
+
+    /* Spacing variables */
+    --spacing-vsmall: 0.25rem;
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 1.5rem;
+    --spacing-vlarge: 2rem;
+}
+
+/* Custom Colours */
+:root {
+    /* Colours are set here as variable using partials */
+    /* Dark main colour using hsla notation */
+    --colour-main-dark-h: 179;
+    --colour-main-dark-s: 91%;
+    --colour-main-dark-l: 18%;
+    --colour-main-dark-a: 1;
+    --colour-main-dark: hsl(var(--colour-main-dark-h), var(--colour-main-dark-s), var(--colour-main-dark-l), var(--colour-main-dark-a));
+
+    /* Light main colour using hsla notation */
+    --colour-main-light-h: 82;
+    --colour-main-light-s: 56%;
+    --colour-main-light-l: 51%;
+    --colour-main-light-a: 1;
+    --colour-main-light: hsl(var(--colour-main-light-h), var(--colour-main-light-s), var(--colour-main-light-l), var(--colour-main-light-a));
+
+    /* Button colours using hsla notation */
+    /* Tiddalik learn navigation button */
+    --colour-btn-tdlk-learn: var(--colour-main-dark);
+    --colour-btn-tdlk-learn-hover: hsl(var(--colour-main-dark-h), var(--colour-main-dark-s), calc(1.5*(var(--colour-main-dark-l))), var(--colour-main-dark-a));
+    --colour-btn-tdlk-learn-txt: white;
+    --colour-btn-tdlk-learn-txt-hover: var(--colour-main-light);
+    --colour-btn-tdlk-learn-border: var(--colour-btn-tdlk-learn);
+    --colour-btn-tdlk-learn-border-hover: white;
+
+    /* Heading nav colours using hsla notation */
+    --colour-heading-nav-text-normal: hsl(0, 0%, 10%, 1);
+    --colour-heading-nav-text-underline-active: hsl(360, 100%, 100%, 1);
+    --colour-heading-nav-text-background-hover: hsl(var(--colour-main-light-h), var(--colour-main-light-s), calc(0.7*(var(--colour-main-light-l))), var(--colour-main-light-a));
+    --colour-heading-nav-item-border: var(--colour-heading-nav-text-background-hover);
+}
